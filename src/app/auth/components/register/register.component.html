@@ -1,3 +1,50 @@
-<h3>
-  Register page
-</h3>
+<div class='auth-page'>
+  <div class='container page'>
+    <div class='row'>
+      <div class='col-md-6 offset-md-3 col-xs-12'>
+        <h1 class='text-xs-center'>
+          Регистрация
+        </h1>
+        <p class='text-xs-center'>
+          <a [routerLink]="['/login']">
+            Есть аккаунт?
+          </a>
+        </p>
+
+        <div>
+          Ошибка
+        </div>
+
+        <form>
+          <fieldset>
+            <fieldset class='form-group'>
+              <input class='form-control form-control-lg'
+                     type='text'
+                     placeholder='Введите ваше имя'
+              />
+            </fieldset>
+            <fieldset class='form-group'>
+              <input class='form-control form-control-lg'
+                     type='text'
+                     placeholder='Введите ваше email'
+              />
+            </fieldset>
+            <fieldset class='form-group'>
+              <input class='form-control form-control-lg'
+                     type='password'
+                     placeholder='Введите ваш пароль'
+              />
+            </fieldset>
+            <button class='btn btn-large btn-primary pull-xs-right'
+                    type='submit'
+            >
+              Зарегистрироваться
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
