@@ -9,17 +9,8 @@
   --primary-color: #5cb85c
   --dark-color: #00000f
   --light-color: #ffffff
-  --gray-color: #55595c
-
-.navbar
-  height: 55px
-  display: flex
-  justify-content: flex-start
-  align-items: center
-  p
-    margin-left: 50px
-    font-size: 25px
-    color: var(--primary-color)
+  --gray-color: #e9e9e9
+  --dark-gray-color: #a9a9a9
 
 .main-layout
   width: 100%
@@ -28,11 +19,52 @@
   justify-content: center
 
 input
-  width: 440px
+  width: 540px
   height: 50px
-  border: 1px solid var(--gray-color)
+  border: 1px solid var(--dark-gray-color)
   border-radius: 5px
   margin-bottom: 15px
   color: var(--gray-color)
   padding-left: 24px
   font-size: 20px
+
+a
+  text-decoration: none
+
+
+
+
+
+
+
+
+
+
+
+.navbar
+  height: 55px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .logo
+    margin-left: 75px
+    font-size: 25px
+    a
+      color: var(--primary-color)
+
+  .list
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 250px
+    margin-right: 75px
+    list-style: none
+    .link a
+      color: var(--dark-gray-color)
+    .link a.active
+      color: var(--dark-color)
+      font-weight: 600
+
+
+
+

@@ -14,6 +14,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [RegisterComponent],
+  exports: [RegisterComponent],
   imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule]
 })
 export class AuthModule {}
