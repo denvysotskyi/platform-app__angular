@@ -8,6 +8,7 @@ import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
 import { metaReducers, reducers } from './auth/store/reducers/reducers'
 import { environment } from '../environments/environment'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { environment } from '../environments/environment'
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
