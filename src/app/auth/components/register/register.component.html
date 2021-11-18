@@ -29,7 +29,9 @@
              formControlName='password'
       />
     </div>
-    <button type='submit'>
+    <button type='submit'
+            [disabled]='isSubmitting$ | async'
+    >
       Зарегистрироваться
     </button>
   </form>

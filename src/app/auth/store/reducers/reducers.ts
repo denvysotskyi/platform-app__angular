@@ -2,11 +2,11 @@ import { ActionReducerMap, MetaReducer } from '@ngrx/store'
 
 import { environment } from '../../../../environments/environment'
 import { registerReducer } from './registerReducer'
-import { RegisterReducerInterface } from '../../interfaces/reducers.interface'
+import { AppStateInterface } from '../../../shared/types/appState.interface'
 
-export const reducers: ActionReducerMap<RegisterReducerInterface> = {
+export const reducers: ActionReducerMap<AppStateInterface> = {
   auth: registerReducer
 }
 
-export const metaReducers: MetaReducer<RegisterReducerInterface>[] =
+export const metaReducers: MetaReducer<AppStateInterface>[] =
   !environment.production ? [] : []
