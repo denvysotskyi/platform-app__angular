@@ -5,7 +5,7 @@ import { registerReducer } from './registerReducer'
 import { RegisterReducerInterface } from '../../interfaces/reducers.interface'
 
 export const reducers: ActionReducerMap<RegisterReducerInterface> = {
-  registerReducer
+  auth: registerReducer
 }
 
 export const metaReducers: MetaReducer<RegisterReducerInterface>[] =
