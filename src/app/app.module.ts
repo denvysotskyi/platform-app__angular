@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
+import { RegisterEffects } from './auth/store/effects/register.effects'
 import { metaReducers, reducers } from './auth/store/reducers/reducers'
 import { environment } from '../environments/environment'
-import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http'
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
-    })
+    }),
+    EffectsModule.forRoot([RegisterEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

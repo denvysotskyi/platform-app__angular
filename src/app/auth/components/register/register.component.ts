@@ -42,12 +42,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.form.reset()
     this.store.dispatch(registerAction(this.form.value))
-    this.authService
-      .register(this.form.value)
-      .subscribe((currentUser: CurrentUserInterface) => {
-        console.log('Current user >>', currentUser)
-      })
+    this.form.reset()
   }
 }
