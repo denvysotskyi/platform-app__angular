@@ -6,8 +6,7 @@ import { Observable } from 'rxjs'
 import { registerAction } from '../../store/actions/actions'
 import { isSubmittingSelector } from '../../store/selectors/selectors'
 import { AppStateInterface } from '../../../shared/types/appState.interface'
-import { AuthService } from '../../services/auth.service'
-import { CurrentUserInterface } from '../../../shared/types/currentUser.interface'
+import { RegisterRequestInterface } from '../../interfaces/registerRequest.interface'
 
 @Component({
   selector: 'app-register',
@@ -21,7 +20,6 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store<AppStateInterface>,
-    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +40,11 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.store.dispatch(registerAction(this.form.value))
+    const request: RegisterRequestInterface = {
+      user: this.form.value
+    }
+
+    this.store.dispatch(registerAction( { request }))
     this.form.reset()
   }
 }
