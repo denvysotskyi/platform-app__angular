@@ -3,10 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 
-import { registerAction } from '../../store/actions/actions'
-import { isSubmittingSelector } from '../../store/selectors/selectors'
 import { AppStateInterface } from '../../../shared/types/appState.interface'
 import { RegisterRequestInterface } from '../../interfaces/registerRequest.interface'
+import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface'
+import { registerAction } from '../../store/actions/actions'
+import {
+  isSubmittingSelector,
+  validationErrorsSelector
+} from '../../store/selectors/selectors'
 
 @Component({
   selector: 'app-register',
@@ -16,10 +20,11 @@ import { RegisterRequestInterface } from '../../interfaces/registerRequest.inter
 export class RegisterComponent implements OnInit {
   form: FormGroup
   isSubmitting$: Observable<boolean>
+  backendErrors$: Observable<BackendErrorsInterface | null>
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<AppStateInterface>,
+    private store: Store<AppStateInterface>
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +42,7 @@ export class RegisterComponent implements OnInit {
 
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector))
   }
 
   onSubmit(): void {
@@ -44,7 +50,7 @@ export class RegisterComponent implements OnInit {
       user: this.form.value
     }
 
-    this.store.dispatch(registerAction( { request }))
+    this.store.dispatch(registerAction({ request }))
     this.form.reset()
   }
 }

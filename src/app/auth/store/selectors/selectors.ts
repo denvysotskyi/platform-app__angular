@@ -9,3 +9,8 @@ export const isSubmittingSelector = createSelector(
   selectFeature,
   (state: AuthStateInterface) => state.isSubmitting
 )
+
+export const validationErrorsSelector = createSelector(
+  selectFeature,
+  (state: AuthStateInterface) => state.validationErrors
+)
