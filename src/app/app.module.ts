@@ -8,8 +8,9 @@ import { EffectsModule } from '@ngrx/effects'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
-import { RegisterEffects } from './auth/store/effects/register.effects'
-import { metaReducers, reducers } from './auth/store/reducers/reducers'
+import { RegisterEffect } from './auth/store/effects/register.effect'
+import { LoginEffect } from './auth/store/effects/login.effect'
+import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
 
 @NgModule({
@@ -19,14 +20,14 @@ import { environment } from '../environments/environment'
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, {
+    StoreModule.forRoot(index, {
       metaReducers
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([RegisterEffects])
+    EffectsModule.forRoot([RegisterEffect, LoginEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

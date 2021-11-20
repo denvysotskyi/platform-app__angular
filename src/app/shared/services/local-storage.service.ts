@@ -11,7 +11,6 @@ export class LocalStorageService {
       console.error('Error saving to localStorage', e.message)
     }
   }
-
   get(key: string): any {
     try {
       return JSON.parse(localStorage.getItem(key))

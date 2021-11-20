@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
 import { AppStateInterface } from '../../../shared/types/app-state.interface'
 import { RegisterRequestInterface } from '../../interfaces/register-request.interface'
 import { BackendErrorsInterface } from '../../../shared/types/backend-errors.interface'
-import { registerAction } from '../../store/actions/actions'
+import { registerAction } from '../../store/actions/register-actions'
 import {
   isSubmittingSelector,
   validationErrorsSelector

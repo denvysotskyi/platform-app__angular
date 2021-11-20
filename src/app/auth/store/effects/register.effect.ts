@@ -8,13 +8,13 @@ import {
   registerAction,
   registerFailureAction,
   registerSuccessAction
-} from '../actions/actions'
+} from '../actions/register-actions'
 import { AuthService } from '../../services/auth.service'
 import { CurrentUserInterface } from '../../../shared/types/current-user.interface'
 import { LocalStorageService } from '../../../shared/services/local-storage.service'
 
 @Injectable()
-export class RegisterEffects {
+export class RegisterEffect {
   register$ = createEffect(() =>
     this.actions$.pipe(
       ofType(registerAction),
