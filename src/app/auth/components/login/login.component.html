@@ -1,0 +1,36 @@
+<div class='auth-page'>
+  <h1 class='title'>
+    Вход
+  </h1>
+  <p class='text'>
+    <a [routerLink]="['/register']">
+      Необходим аккаунт?
+    </a>
+  </p>
+  <app-backend-error-messages *ngIf='backendErrors$ | async'
+                              [backendErrors]='backendErrors$ | async'
+  >
+  </app-backend-error-messages>
+  <form [formGroup]='form'
+        (ngSubmit)='onSubmit()'
+  >
+    <div>
+      <input type='text'
+             placeholder='Введите ваш email'
+             formControlName='email'
+      />
+    </div>
+    <div>
+      <input type='password'
+             placeholder='Введите ваш пароль'
+             formControlName='password'
+      />
+    </div>
+    <button type='submit'
+            [disabled]='isSubmitting$ | async'
+    >
+      Войти
+    </button>
+  </form>
+</div>
+

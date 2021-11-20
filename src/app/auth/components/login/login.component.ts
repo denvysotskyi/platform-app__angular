@@ -7,16 +7,16 @@ import {
   isSubmittingSelector,
   validationErrorsSelector
 } from '../../store/selectors/selectors'
-import { AppStateInterface } from '../../../shared/types/app-state.interface'
 import { BackendErrorsInterface } from '../../../shared/types/backend-errors.interface'
-import { RegisterRequestInterface } from '../../interfaces/register-request.interface'
-import { registerAction } from '../../store/actions/register-actions'
+import { AppStateInterface } from '../../../shared/types/app-state.interface'
+import { LoginRequestInterface } from '../../interfaces/login-request.interface'
+import { loginAction } from '../../store/actions/login-actions'
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html'
+  selector: 'app-login',
+  templateUrl: './login.component.html'
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
   form: FormGroup
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
 
   initializeForm(): void {
     this.form = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
@@ -45,11 +44,11 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const request: RegisterRequestInterface = {
+    const request: LoginRequestInterface = {
       user: this.form.value
     }
 
-    this.store.dispatch(registerAction({ request }))
+    this.store.dispatch(loginAction({ request }))
     this.form.reset()
   }
 }

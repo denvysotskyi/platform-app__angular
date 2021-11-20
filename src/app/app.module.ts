@@ -29,7 +29,6 @@ import { environment } from '../environments/environment'
     }),
     EffectsModule.forRoot([RegisterEffect, LoginEffect])
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
