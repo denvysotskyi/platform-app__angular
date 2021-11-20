@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms'
 
 import { RegisterComponent } from './components/register/register.component'
+import { BackendErrorMessagesModule } from '../shared/modules/backend-error-messages/backend-error-messages.module'
 
 const routes: Routes = [
   {
@@ -14,7 +15,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [RegisterComponent],
-  exports: [RegisterComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    BackendErrorMessagesModule
+  ],
+  exports: [RegisterComponent]
 })
 export class AuthModule {}

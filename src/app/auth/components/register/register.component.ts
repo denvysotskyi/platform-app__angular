@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 
-import { AppStateInterface } from '../../../shared/types/appState.interface'
-import { RegisterRequestInterface } from '../../interfaces/registerRequest.interface'
-import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface'
+import { AppStateInterface } from '../../../shared/types/app-state.interface'
+import { RegisterRequestInterface } from '../../interfaces/register-request.interface'
+import { BackendErrorsInterface } from '../../../shared/types/backend-errors.interface'
 import { registerAction } from '../../store/actions/actions'
 import {
   isSubmittingSelector,

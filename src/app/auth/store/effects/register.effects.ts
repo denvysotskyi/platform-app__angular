@@ -9,7 +9,7 @@ import {
   registerSuccessAction
 } from '../actions/actions'
 import { AuthService } from '../../services/auth.service'
-import { CurrentUserInterface } from '../../../shared/types/currentUser.interface'
+import { CurrentUserInterface } from '../../../shared/types/current-user.interface'
 
 @Injectable()
 export class RegisterEffects {
@@ -24,7 +24,7 @@ export class RegisterEffects {
           catchError((errorResponse: HttpErrorResponse) => {
             return of(
               registerFailureAction({ errors: errorResponse.error.errors })
-          )
+            )
           })
         )
       })

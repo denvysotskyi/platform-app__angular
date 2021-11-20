@@ -7,10 +7,10 @@
       Есть аккаунт?
     </a>
   </p>
-  <mc-backend-error-messages *ngIf='backendErrors$ | async'
-                             [backendErrors]='backendErrors$ | async'
+  <app-backend-error-messages *ngIf='backendErrors$ | async'
+                              [backendErrors]='backendErrors$ | async'
   >
-  </mc-backend-error-messages>
+  </app-backend-error-messages>
   <form [formGroup]='form'
         (ngSubmit)='onSubmit()'
   >

@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store'
-import { AuthStateInterface } from '../../interfaces/authState.interface'
+import { AuthStateInterface } from '../../interfaces/auth-state.interface'
 
 export const authKey = 'auth'
 
