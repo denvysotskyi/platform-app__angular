@@ -12,9 +12,10 @@ import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
 import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
+import { TopBarComponent } from './shared/modules/top-bar/components/top-bar/top-bar.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TopBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
