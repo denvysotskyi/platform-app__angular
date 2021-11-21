@@ -1,30 +1,4 @@
-<nav class='navbar'>
-  <p class='logo'>
-    <a [routerLink]="['/']">
-      Platform
-    </a>
-  </p>
-  <ul class='list'>
-    <li class='link'>
-      <a routerLinkActive='active'
-         [routerLink]="['/']"
-      >
-        Домой
-      </a>
-    </li>
-    <li class='link'>
-      <a [routerLink]="['/']"
-      >
-        Регистрация
-      </a>
-    </li>
-    <li class='link'>
-      <a [routerLink]="['/']">
-        Вход
-      </a>
-    </li>
-  </ul>
-</nav>
+<app-top-bar></app-top-bar>
 
 <div class='main-layout'>
   <router-outlet></router-outlet>

@@ -1,1 +1,31 @@
-<p>top-bar works!</p>
+<nav class='navbar'>
+  <p class='logo'>
+    <a [routerLink]="['/']">
+      Platform
+    </a>
+  </p>
+  <ul class='list'>
+    <li class='link'>
+      <a [routerLinkActiveOptions]='{ exact: true }'
+         routerLinkActive='active'
+         [routerLink]="['/']"
+      >
+        Домой
+      </a>
+    </li>
+    <li class='link'>
+      <a routerLinkActive='active'
+        [routerLink]="['/register']"
+      >
+        Регистрация
+      </a>
+    </li>
+    <li class='link'>
+      <a routerLinkActive='active'
+        [routerLink]="['/login']"
+      >
+        Вход
+      </a>
+    </li>
+  </ul>
+</nav>

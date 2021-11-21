@@ -10,17 +10,18 @@ import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
+import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
 import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
-import { TopBarComponent } from './shared/modules/top-bar/components/top-bar/top-bar.component'
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    TopBarModule,
     StoreModule.forRoot(index, {
       metaReducers
     }),
