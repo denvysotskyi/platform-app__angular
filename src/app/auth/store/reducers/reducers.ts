@@ -23,16 +23,16 @@ export const reducers = createReducer(
   initialState,
   on(
     registerAction,
-    (state): AuthStateInterface => ({
-      ...state,
+    (authState): AuthStateInterface => ({
+      ...authState,
       isSubmitting: true,
       validationErrors: null
     })
   ),
   on(
     registerSuccessAction,
-    (state, action): AuthStateInterface => ({
-      ...state,
+    (authState, action): AuthStateInterface => ({
+      ...authState,
       isSubmitting: false,
       currentUser: action.currentUser,
       isLoggedIn: true
@@ -40,24 +40,24 @@ export const reducers = createReducer(
   ),
   on(
     registerFailureAction,
-    (state, action): AuthStateInterface => ({
-      ...state,
+    (authState, action): AuthStateInterface => ({
+      ...authState,
       isSubmitting: false,
       validationErrors: action.errors
     })
   ),
   on(
     loginAction,
-    (state): AuthStateInterface => ({
-      ...state,
+    (authState): AuthStateInterface => ({
+      ...authState,
       isSubmitting: true,
       validationErrors: null
     })
   ),
   on(
     loginSuccessAction,
-    (state, action): AuthStateInterface => ({
-      ...state,
+    (authState, action): AuthStateInterface => ({
+      ...authState,
       isSubmitting: false,
       currentUser: action.currentUser,
       isLoggedIn: true
@@ -65,8 +65,8 @@ export const reducers = createReducer(
   ),
   on(
     loginFailureAction,
-    (state, action): AuthStateInterface => ({
-      ...state,
+    (authState, action): AuthStateInterface => ({
+      ...authState,
       isSubmitting: false,
       validationErrors: action.errors
     })

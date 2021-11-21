@@ -13,19 +13,55 @@
         Домой
       </a>
     </li>
-    <li class='link'>
-      <a routerLinkActive='active'
-        [routerLink]="['/register']"
-      >
-        Регистрация
-      </a>
-    </li>
-    <li class='link'>
-      <a routerLinkActive='active'
-        [routerLink]="['/login']"
-      >
-        Вход
-      </a>
-    </li>
+    <ng-container *ngIf='isLoggedIn$ | async'>
+      <li class='link'>
+        <a routerLinkActive='active'
+           [routerLink]="['/articles/new']"
+        >
+          &nbsp;
+          &nbsp;
+          <i class='ion-compose'></i>
+          Новый пост
+        </a>
+      </li>
+      <li class='link'>
+        <a routerLinkActive='active'
+           [routerLink]="['/settings']"
+        >
+          &nbsp;
+          &nbsp;
+          <i class='ion-gear-a'></i>
+          Настройки
+        </a>
+      </li>
+      <li class='link'>
+        <a routerLinkActive='active'
+           [routerLink]="['/profiles', (currentUser$ | async).username]"
+        >
+          &nbsp;
+          &nbsp;
+          <img class='avatar'
+               [src]='(currentUser$ | async).image'
+          />
+          {{(currentUser$ | async).username}}
+        </a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf='isAnonymous$ | async'>
+      <li class='link'>
+        <a routerLinkActive='active'
+           [routerLink]="['/register']"
+        >
+          Регистрация
+        </a>
+      </li>
+      <li class='link'>
+        <a routerLinkActive='active'
+           [routerLink]="['/login']"
+        >
+          Вход
+        </a>
+      </li>
+    </ng-container>
   </ul>
 </nav>

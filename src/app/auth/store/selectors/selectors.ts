@@ -7,10 +7,25 @@ export const selectFeature = createFeatureSelector<AuthStateInterface>(authKey)
 
 export const isSubmittingSelector = createSelector(
   selectFeature,
-  (state: AuthStateInterface) => state.isSubmitting
+  (authState: AuthStateInterface) => authState.isSubmitting
+)
+
+export const currentUserSelector = createSelector(
+  selectFeature,
+  (authState: AuthStateInterface) => authState.currentUser
+)
+
+export const isLoggedInSelector = createSelector(
+  selectFeature,
+  (authState: AuthStateInterface) => authState.isLoggedIn
+)
+
+export const isAnonymousSelector = createSelector(
+  selectFeature,
+  (authState: AuthStateInterface) => authState.isLoggedIn === false
 )
 
 export const validationErrorsSelector = createSelector(
   selectFeature,
-  (state: AuthStateInterface) => state.validationErrors
+  (authState: AuthStateInterface) => authState.validationErrors
 )
