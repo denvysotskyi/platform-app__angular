@@ -8,9 +8,10 @@ import { EffectsModule } from '@ngrx/effects'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
+import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
-import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
+import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
 import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
 
@@ -29,7 +30,7 @@ import { environment } from '../environments/environment'
       maxAge: 25,
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([RegisterEffect, LoginEffect])
+    EffectsModule.forRoot([RegisterEffect, LoginEffect, GetCurrentUserEffect])
   ],
   bootstrap: [AppComponent]
 })

@@ -7,8 +7,8 @@ import {
   isSubmittingSelector,
   validationErrorsSelector
 } from '../../store/selectors/selectors'
-import { AppStateInterface } from '../../../shared/types/app-state.interface'
-import { BackendErrorsInterface } from '../../../shared/types/backend-errors.interface'
+import { AppStateInterface } from '../../../shared/interfaces/app-state.interface'
+import { BackendErrorsInterface } from '../../../shared/interfaces/backend-errors.interface'
 import { RegisterRequestInterface } from '../../interfaces/register-request.interface'
 import { registerAction } from '../../store/actions/register-actions'
 

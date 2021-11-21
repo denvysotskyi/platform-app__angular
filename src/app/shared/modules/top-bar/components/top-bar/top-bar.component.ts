@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { select, Store } from '@ngrx/store'
 
-import { CurrentUserInterface } from '../../../../types/current-user.interface'
+import { CurrentUserInterface } from '../../../../interfaces/current-user.interface'
 import {
   currentUserSelector,
   isAnonymousSelector,

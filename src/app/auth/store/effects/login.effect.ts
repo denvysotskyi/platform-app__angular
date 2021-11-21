@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
-import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { catchError, map, of, switchMap, tap } from 'rxjs'
 import { HttpErrorResponse } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { Actions, createEffect, ofType } from '@ngrx/effects'
+import { catchError, map, of, switchMap, tap } from 'rxjs'
 
 import {
   loginAction,
@@ -10,7 +10,7 @@ import {
   loginSuccessAction
 } from '../actions/login-actions'
 import { AuthService } from '../../services/auth.service'
-import { CurrentUserInterface } from '../../../shared/types/current-user.interface'
+import { CurrentUserInterface } from '../../../shared/interfaces/current-user.interface'
 import { LocalStorageService } from '../../../shared/services/local-storage.service'
 
 @Injectable()
