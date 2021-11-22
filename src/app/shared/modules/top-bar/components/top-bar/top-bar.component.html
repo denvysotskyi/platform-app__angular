@@ -35,16 +35,14 @@
         </a>
       </li>
       <li class='link'>
-        <a routerLinkActive='active'
-           [routerLink]="['/profiles', (currentUser$ | async).username]"
-        >
-          &nbsp;
-          &nbsp;
-          <img class='avatar'
-               [src]='(currentUser$ | async).image'
-          />
-          {{(currentUser$ | async).username}}
-        </a>
+        <div class='avatar'>
+          <img [src]='(currentUser$ | async).image'/>
+          <a routerLinkActive='active'
+             [routerLink]="['/profiles', (currentUser$ | async).username]"
+          >
+            {{(currentUser$ | async).username}}
+          </a>
+        </div>
       </li>
     </ng-container>
     <ng-container *ngIf='isAnonymous$ | async'>

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core'
+import { NgModule, Provider } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { EffectsModule } from '@ngrx/effects'
 
 import { AppRoutingModule } from './app-routing.module'
@@ -14,6 +14,13 @@ import { LoginEffect } from './auth/store/effects/login.effect'
 import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
 import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
+import { AuthInterceptor } from './shared/services/auth-interceptor.service'
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
+  multi: true
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +39,7 @@ import { environment } from '../environments/environment'
     }),
     EffectsModule.forRoot([RegisterEffect, LoginEffect, GetCurrentUserEffect])
   ],
+  providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
