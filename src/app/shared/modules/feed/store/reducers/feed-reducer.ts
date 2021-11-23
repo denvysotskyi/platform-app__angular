@@ -9,8 +9,8 @@ import { FeedStateInterface } from '../../interfaces/feed-state.interface'
 
 export const initialState: FeedStateInterface = {
   isLoading: false,
-  error: null,
-  data: null
+  data: null,
+  error: null
 }
 
 export const feedReducer = createReducer(

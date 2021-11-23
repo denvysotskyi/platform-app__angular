@@ -1,5 +1,7 @@
 import { NgModule, Provider } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
+import { registerLocaleData } from '@angular/common'
+import uaLocale from '@angular/common/locales/ru-UA'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
@@ -18,6 +20,8 @@ import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth-reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
+
+registerLocaleData(uaLocale, 'ua')
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
