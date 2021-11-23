@@ -25,7 +25,7 @@ export const initialState: AuthStateInterface = {
   validationErrors: null
 }
 
-export const reducers = createReducer(
+export const authReducer = createReducer(
   initialState,
   on(
     registerAction,

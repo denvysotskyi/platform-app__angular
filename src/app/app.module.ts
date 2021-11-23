@@ -13,9 +13,11 @@ import { GlobalFeedModule } from './global-feed/global-feed.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
 import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
+import { GetFeedEffect } from './shared/modules/feed/store/effects/get-feed.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
-import { metaReducers, index } from './auth/store/reducers'
 import { environment } from '../environments/environment'
+import { authReducer } from './auth/store/reducers/auth-reducer'
+import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -32,14 +34,20 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HttpClientModule,
     TopBarModule,
     GlobalFeedModule,
-    StoreModule.forRoot(index, {
-      metaReducers
+    StoreModule.forRoot({
+      auth: authReducer,
+      feed: feedReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([RegisterEffect, LoginEffect, GetCurrentUserEffect])
+    EffectsModule.forRoot([
+      RegisterEffect,
+      LoginEffect,
+      GetCurrentUserEffect,
+      GetFeedEffect
+    ])
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
