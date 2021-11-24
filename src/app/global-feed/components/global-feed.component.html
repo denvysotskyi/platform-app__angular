@@ -4,7 +4,7 @@
        routerLinkActive='active'
        [routerLink]="['/']"
     >
-      Посты {{(currentUser$ | async).username}}
+      Мои посты
     </a>
     <a class='all-posts'
        routerLinkActive='active'
@@ -14,9 +14,12 @@
     </a>
   </div>
 
-  <app-feed [apiUrl]='apiUrl'></app-feed>
+  <div class='incoming-components'>
+    <div class='feed'>
+      <app-feed [apiUrl]='apiUrl'></app-feed>
+    </div>
+    <div class='side-bar'>
+      <app-side-bar></app-side-bar>
+    </div>
+  </div>
 </div>
-
-<!--<app-side-bar></app-side-bar>-->
-
-
