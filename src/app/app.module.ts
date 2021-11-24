@@ -1,16 +1,17 @@
 import { NgModule, Provider } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { registerLocaleData } from '@angular/common'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import uaLocale from '@angular/common/locales/ru-UA'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { EffectsModule } from '@ngrx/effects'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 import { AuthModule } from './auth/auth.module'
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
+import { SideBarModule } from './shared/modules/side-bar/side-bar.module'
 import { GlobalFeedModule } from './global-feed/global-feed.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
@@ -37,6 +38,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AuthModule,
     HttpClientModule,
     TopBarModule,
+    SideBarModule,
     GlobalFeedModule,
     StoreModule.forRoot({
       auth: authReducer,

@@ -1,8 +1,22 @@
 <div class='global-wrap'>
-  <p class='title'>
-    Посты
-  </p>
+  <div class='posts'>
+    <a class='my-posts'
+       routerLinkActive='active'
+       [routerLink]="['/']"
+    >
+      Посты {{(currentUser$ | async).username}}
+    </a>
+    <a class='all-posts'
+       routerLinkActive='active'
+       [routerLink]="['/']"
+    >
+      Общие посты
+    </a>
+  </div>
 
   <app-feed [apiUrl]='apiUrl'></app-feed>
 </div>
+
+<!--<app-side-bar></app-side-bar>-->
+
 

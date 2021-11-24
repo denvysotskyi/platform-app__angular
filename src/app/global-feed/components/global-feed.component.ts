@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { CurrentUserInterface } from '../../shared/interfaces/current-user.interface'
+import { select, Store } from '@ngrx/store'
+import { currentUserSelector } from '../../auth/store/selectors/selectors'
 
 @Component({
   selector: 'app-global-feed',
@@ -7,8 +11,15 @@ import { Component, OnInit } from '@angular/core'
 })
 export class GlobalFeedComponent implements OnInit {
   apiUrl = '/articles'
+  currentUser$: Observable<CurrentUserInterface | null>
 
-  constructor() {}
+  constructor(private store: Store) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initializeValues()
+  }
+
+  initializeValues(): void {
+    this.currentUser$ = this.store.pipe(select(currentUserSelector))
+  }
 }

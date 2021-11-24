@@ -6,25 +6,7 @@
   Произошли ошибки
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div *ngIf='feed$ | async'>
-
-
   <div class='article-wrap'
        *ngFor='let article of (feed$ | async).articles'
   >
@@ -49,7 +31,7 @@
       </div>
     </div>
 
-    <div class='description'>
+    <div class='titles'>
       <a [routerLink]="['/articles', article.slug]">
         <h1>
           {{article.title}}
@@ -60,13 +42,18 @@
       </p>
     </div>
 
-
+    <div class='description'>
+      <div class='more'>
+        <a [routerLink]="['/']">
+          Показать больше...
+        </a>
+      </div>
+      <div class='tags'>
+        <a [routerLink]="['/']">
+          Теги
+        </a>
+      </div>
+    </div>
 
   </div>
-
-
-
-
-
-
 </div>
