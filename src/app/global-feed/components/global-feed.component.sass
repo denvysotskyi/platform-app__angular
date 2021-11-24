@@ -1,15 +1,26 @@
-.global-wrap
-  margin-left: 200px
+.global-feed-wrap
+  display: flex
+  justify-content: space-between
   .posts
-    margin: 40px 0 10px 0
+    min-width: 65%
+    margin: 40px 0 10px 200px
     .all-posts
       color: var(--primary-color)
-      font-weight: 600
-  a
-    color: var(--dark-gray-color)
+      margin-bottom: 11px
+    a
+      color: var(--dark-gray-color)
+      font-size: 16px
+      margin: 0 15px
+
+.tags
+  margin-top: 20px
+  min-width: 12%
+  height: 238px
+  background: var(--gray-color)
+  border-radius: 6px
+  padding: 15px
+  p
     font-size: 16px
-    margin: 0 15px
-  .incoming-components
-    display: flex
-    .feed
-      margin-right: 96px
+
+.feed
+  width: 100%
