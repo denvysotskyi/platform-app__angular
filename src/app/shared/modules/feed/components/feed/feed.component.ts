@@ -2,13 +2,13 @@ import { Component, Input, OnInit } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 
-import { getFeedAction } from '../store/actions/get-feed-actions'
-import { GetFeedResponseInterface } from '../interfaces/get-feed-response.interface'
+import { getFeedAction } from '../../store/actions/get-feed-actions'
+import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
 import {
   isLoadingSelector,
   feedSelector,
   errorSelector
-} from '../store/selectors/selectors'
+} from '../../store/selectors/selectors'
 
 @Component({
   selector: 'app-feed',

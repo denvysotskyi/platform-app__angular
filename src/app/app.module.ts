@@ -20,6 +20,7 @@ import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth-reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
+import { BannerModule } from './shared/modules/banner/banner.module'
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -38,6 +39,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HttpClientModule,
     TopBarModule,
     GlobalFeedModule,
+    BannerModule,
     StoreModule.forRoot({
       auth: authReducer,
       feed: feedReducer
