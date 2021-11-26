@@ -26,7 +26,6 @@
         Добавить в избранное
       </div>
     </div>
-
     <div class='titles'>
       <a [routerLink]="['/articles', article.slug]">
         <h1>
@@ -37,7 +36,6 @@
         {{article.description}}
       </p>
     </div>
-
     <div class='description'>
       <div class='more'>
         <a [routerLink]="['/']">
@@ -50,6 +48,13 @@
         </a>
       </div>
     </div>
-
   </div>
+
+  <app-pagination [total]='(feed$ | async).articlesCount'
+                  [limit]='limit'
+                  [url]='baseUrl'
+                  [currentPage]='currentPage'
+  >
+  </app-pagination>
+
 </div>
