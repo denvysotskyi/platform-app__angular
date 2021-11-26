@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AuthModule } from './auth/auth.module'
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
 import { GlobalFeedModule } from './global-feed/global-feed.module'
+import { BannerModule } from './shared/modules/banner/banner.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
 import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
@@ -20,7 +21,6 @@ import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth-reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
-import { BannerModule } from './shared/modules/banner/banner.module'
 
 registerLocaleData(uaLocale, 'ua')
 
