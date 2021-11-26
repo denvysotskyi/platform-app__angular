@@ -23,6 +23,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   isLoading$: Observable<boolean>
   feed$: Observable<GetFeedResponseInterface | null>
   error$: Observable<string | null>
+
   limit: number = environment.limit
   baseUrl: string
   queryParamsSubscription: Subscription
@@ -44,19 +45,19 @@ export class FeedComponent implements OnInit, OnDestroy {
     this.queryParamsSubscription.unsubscribe()
   }
 
+  initializeValues(): void {
+    this.isLoading$ = this.store.pipe(select(isLoadingSelector))
+    this.feed$ = this.store.pipe(select(feedSelector))
+    this.error$ = this.store.pipe(select(errorSelector))
+    this.baseUrl = this.router.url.split('?')[0]
+  }
+
   initializeListeners(): void {
     this.queryParamsSubscription = this.route.queryParams.subscribe(
       (params: Params) => {
         this.currentPage = Number(params['page'] || '1')
       }
     )
-  }
-
-  initializeValues(): void {
-    this.isLoading$ = this.store.pipe(select(isLoadingSelector))
-    this.feed$ = this.store.pipe(select(feedSelector))
-    this.error$ = this.store.pipe(select(errorSelector))
-    this.baseUrl = this.router.url.split('?')[0]
   }
 
   fetchData(): void {

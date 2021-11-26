@@ -1,3 +1,14 @@
-<p>
-  Pagination
-</p>
+<div class='pagination-wrap'>
+  <ul class='list'>
+    <li *ngFor='let page of pages'
+        class='link'
+    >
+      <a routerLinkActive='active'
+         [routerLink]='urlProps'
+      >
+        {{page}}
+      </a>
+    </li>
+  </ul>
+</div>
+
