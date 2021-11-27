@@ -1,8 +1,8 @@
 <div class='pagination-wrap'>
   <ul class='list'>
-    <li *ngFor='let page of pages'
+    <li class='link'
+        *ngFor='let page of pages'
         [ngClass]='{ active: currentPageProps === page }'
-        class='link'
     >
       <a routerLinkActive='active'
          [routerLink]='urlProps'
