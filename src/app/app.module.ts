@@ -6,6 +6,7 @@ import uaLocale from '@angular/common/locales/ru-UA'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { EffectsModule } from '@ngrx/effects'
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
@@ -41,9 +42,11 @@ const INTERCEPTOR_PROVIDER: Provider = {
     GlobalFeedModule,
     BannerModule,
     StoreModule.forRoot({
+      router: routerReducer,
       auth: authReducer,
       feed: feedReducer
     }),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
