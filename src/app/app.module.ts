@@ -18,10 +18,12 @@ import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
 import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
 import { GetFeedEffect } from './shared/modules/feed/store/effects/get-feed.effect'
+import { GetPopularTagsEffect } from './shared/modules/popular-tags/store/effects/get-popular-tags.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth-reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
+import { tagsReducer } from './shared/modules/popular-tags/store/reducers/tags-reducer'
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -44,7 +46,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     StoreModule.forRoot({
       router: routerReducer,
       auth: authReducer,
-      feed: feedReducer
+      feed: feedReducer,
+      tags: tagsReducer
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
@@ -55,7 +58,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       RegisterEffect,
       LoginEffect,
       GetCurrentUserEffect,
-      GetFeedEffect
+      GetFeedEffect,
+      GetPopularTagsEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],

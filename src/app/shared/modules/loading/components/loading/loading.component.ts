@@ -14,8 +14,8 @@ import { Component } from '@angular/core'
         display: flex
         justify-content: center
         .image
-          width: 150px
-          height: 150px
+          width: 175px
+          height: 175px
 `
   ]
 })

@@ -1,1 +1,18 @@
-<p>popular-tags works!</p>
+<app-loading *ngIf='isLoading$ | async'></app-loading>
+
+<app-error-message *ngIf='error$ | async'></app-error-message>
+
+<div class='tags-wrap'
+     *ngIf='popularTags$ | async'
+>
+  <p>
+    Популярные теги
+  </p>
+  <ul>
+    <li *ngFor='let tag of popularTags$ | async'>
+      <a [routerLink]="['/tags', tag]">
+        {{tag}}
+      </a>
+    </li>
+  </ul>
+</div>

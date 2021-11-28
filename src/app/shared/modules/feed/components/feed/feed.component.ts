@@ -10,7 +10,7 @@ import {
   isLoadingSelector,
   feedSelector,
   errorSelector
-} from '../../store/selectors/selectors'
+} from '../../store/selectors/feed-selectors'
 import { environment } from '../../../../../../environments/environment'
 
 @Component({
@@ -71,7 +71,5 @@ export class FeedComponent implements OnInit, OnDestroy {
     })
     const apiUrlWithParams = `${parsedUrl.url}?${stringifiedParams}`
     this.store.dispatch(getFeedAction({ url: apiUrlWithParams }))
-
-    console.log('ParseUrl', parsedUrl)
   }
 }

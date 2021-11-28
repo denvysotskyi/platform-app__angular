@@ -7,7 +7,7 @@ import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector
-} from '../../../../../auth/store/selectors/selectors'
+} from '../../../../../auth/store/selectors/auth-selectors'
 
 @Component({
   selector: 'app-top-bar',
