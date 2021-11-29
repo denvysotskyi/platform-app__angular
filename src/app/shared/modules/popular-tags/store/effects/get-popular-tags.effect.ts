@@ -7,7 +7,7 @@ import {
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction
 } from '../actions/get-popular-tags-actions'
-import { PopularTagType } from '../../../../types/popular-tag.type'
+import { TagType } from '../../../../types/tag.type'
 import { PopularTagsService } from '../../services/popular-tags.service'
 
 @Injectable()
@@ -17,7 +17,7 @@ export class GetPopularTagsEffect {
       ofType(getPopularTagsAction),
       switchMap(() => {
         return this.popularTagsService.getPopularTags().pipe(
-          map((tags: PopularTagType[] | null) => {
+          map((tags: TagType[] | null) => {
             return getPopularTagsSuccessAction({ tags })
           }),
           catchError(() => {

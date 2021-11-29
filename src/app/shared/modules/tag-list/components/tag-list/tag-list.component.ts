@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { PopularTagType } from '../../../../types/popular-tag.type'
+import { TagType } from '../../../../types/tag.type'
 
 @Component({
   selector: 'app-tag-list',
@@ -7,5 +7,5 @@ import { PopularTagType } from '../../../../types/popular-tag.type'
   styleUrls: ['./tag-list.component.sass']
 })
 export class TagListComponent {
-  @Input('tags') tagsProps: PopularTagType[] | null
+  @Input('tags') tagsProps: TagType[] | null
 }

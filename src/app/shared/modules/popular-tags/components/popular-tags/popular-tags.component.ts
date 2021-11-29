@@ -8,7 +8,7 @@ import {
   isLoadingSelector,
   tagsSelector
 } from '../../store/selectors/tags-selectors'
-import { PopularTagType } from '../../../../types/popular-tag.type'
+import { TagType } from '../../../../types/tag.type'
 
 @Component({
   selector: 'app-popular-tags',
@@ -17,7 +17,7 @@ import { PopularTagType } from '../../../../types/popular-tag.type'
 })
 export class PopularTagsComponent implements OnInit {
   isLoading$: Observable<boolean>
-  popularTags$: Observable<PopularTagType[] | null>
+  popularTags$: Observable<TagType[] | null>
   error$: Observable<string | null>
 
   constructor(private store: Store) {}

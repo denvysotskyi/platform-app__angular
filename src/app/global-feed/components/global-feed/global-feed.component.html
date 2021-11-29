@@ -1,19 +1,8 @@
 <div class='global-feed-wrap'>
   <div class='posts'>
-    <div class='all-posts'>
-      <a class='my-posts'
-         routerLinkActive='active'
-         [routerLink]="['/']"
-      >
-        Мои посты
-      </a>
-      <a class='all-posts'
-         routerLinkActive='active'
-         [routerLink]="['/']"
-      >
-        Общие посты
-      </a>
-    </div>
+
+    <app-feed-toggler></app-feed-toggler>
+
     <div class='feed'>
       <app-feed [apiUrl]='apiUrl'></app-feed>
     </div>

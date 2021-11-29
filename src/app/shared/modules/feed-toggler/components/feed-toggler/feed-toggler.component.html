@@ -1,0 +1,32 @@
+<div class='toggler-wrap'>
+  <ul class='toggle-list'>
+
+    <li *ngIf='isLoggedIn$ | async'>
+      <a class='my-posts'
+         [routerLink]="['/feed']"
+         routerLinkActive='active'
+      >
+        Мои посты
+      </a>
+    </li>
+
+    <li>
+      <a class='main-posts'
+         [routerLink]="['/']"
+         routerLinkActive='active'
+      >
+        Общие посты
+      </a>
+    </li>
+
+    <li *ngIf='tagNameProps'>
+      <a class='tags'
+         [routerLink]="['/tags', tagNameProps]"
+         routerLinkActive='active'
+      >
+        {{tagNameProps}}
+      </a>
+    </li>
+
+  </ul>
+</div>
