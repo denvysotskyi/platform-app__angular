@@ -37,7 +37,9 @@
       </li>
       <li class='link'>
         <div class='avatar'>
-          <img [src]='(currentUser$ | async).image'/>
+          <img [src]='(currentUser$ | async).image'
+               alt='avatar'
+          />
           <a routerLinkActive='active'
              [routerLink]="['/profiles', (currentUser$ | async).username]"
           >
