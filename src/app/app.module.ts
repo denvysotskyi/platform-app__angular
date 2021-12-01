@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module'
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module'
 import { GlobalFeedModule } from './global-feed/global-feed.module'
 import { YourFeedModule } from './your-feed/your-feed.module'
+import { TagFeedModule } from './tag-feed/tag-feed.module'
 import { BannerModule } from './shared/modules/banner/banner.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
@@ -44,6 +45,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     TopBarModule,
     GlobalFeedModule,
     YourFeedModule,
+    TagFeedModule,
     BannerModule,
     StoreModule.forRoot({
       router: routerReducer,
