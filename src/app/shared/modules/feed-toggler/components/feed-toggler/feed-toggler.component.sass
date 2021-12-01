@@ -1,4 +1,4 @@
-.toggle-list
+.toggle-list-login
   display: flex
   margin-bottom: 15px
   li
@@ -10,6 +10,24 @@
     a
       color: var(--dark-gray-color)
     a.active
+      position: absolute
+      color: var(--primary-color)
+      width: 100%
+      height: 34px
+      border-bottom: 2px solid #5cb85c
+      display: flex
+      justify-content: center
+
+.toggle-list-logout
+  display: flex
+  margin-bottom: 33px
+  li
+    margin: 0 10px
+    position: relative
+    width: 110px
+    display: flex
+    justify-content: center
+    a
       position: absolute
       color: var(--primary-color)
       width: 100%

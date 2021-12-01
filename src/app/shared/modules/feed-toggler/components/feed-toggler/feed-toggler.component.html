@@ -1,7 +1,6 @@
 <div class='toggler-wrap'>
-  <ul class='toggle-list'>
-
-    <li *ngIf='isLoggedIn$ | async'>
+  <ul class='toggle-list-login' *ngIf='isLoggedIn$ | async; else elseBlock'>
+    <li>
       <a class='my-posts'
          [routerLink]="['/feed']"
          routerLinkActive='active'
@@ -9,7 +8,6 @@
         Мои посты
       </a>
     </li>
-
     <li>
       <a class='main-posts'
          [routerLink]="['/']"
@@ -18,7 +16,6 @@
         Общие посты
       </a>
     </li>
-
     <li *ngIf='tagNameProps'>
       <a class='tags'
          [routerLink]="['/tags', tagNameProps]"
@@ -27,6 +24,18 @@
         {{tagNameProps}}
       </a>
     </li>
-
   </ul>
+
+  <ng-template #elseBlock>
+    <ul class='toggle-list-logout' >
+      <li>
+        <a class='main-posts'
+           [routerLink]="['/']"
+           routerLinkActive='active'
+        >
+          Общие посты
+        </a>
+      </li>
+    </ul>
+  </ng-template>
 </div>
