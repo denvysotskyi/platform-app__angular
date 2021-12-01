@@ -8,6 +8,8 @@ import {
   isAnonymousSelector,
   isLoggedInSelector
 } from '../../../../../auth/store/selectors/auth-selectors'
+import { logoutAction } from '../../../../../auth/store/actions/logout-actions'
+import { LocalStorageService } from '../../../../services/local-storage.service'
 
 @Component({
   selector: 'app-top-bar',
@@ -19,7 +21,10 @@ export class TopBarComponent implements OnInit {
   isAnonymous$: Observable<boolean>
   currentUser$: Observable<CurrentUserInterface | null>
 
-  constructor(private store: Store) {}
+  constructor(
+    private store: Store,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {
     this.initializeValues()
@@ -29,5 +34,10 @@ export class TopBarComponent implements OnInit {
     this.isLoggedIn$ = this.store.pipe(select(isLoggedInSelector))
     this.isAnonymous$ = this.store.pipe(select(isAnonymousSelector))
     this.currentUser$ = this.store.pipe(select(currentUserSelector))
+  }
+
+  onLogout(): void {
+    this.store.dispatch(logoutAction())
+    this.localStorageService.set('accessToken', null)
   }
 }
