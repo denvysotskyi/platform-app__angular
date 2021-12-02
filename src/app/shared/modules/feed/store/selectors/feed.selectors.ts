@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store'
 
 import { AppStateInterface } from '../../../../interfaces/app-state.interface'
 import { FeedStateInterface } from '../../interfaces/feed-state.interface'
-import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
+import { FeedResponseInterface } from '../../interfaces/feed-response.interface'
 
 export const feedKey = 'feed'
 

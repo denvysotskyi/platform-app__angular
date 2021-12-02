@@ -8,7 +8,7 @@ import {
   getFeedSuccessAction
 } from '../actions/feed.actions'
 import { FeedService } from '../../services/feed.service'
-import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
+import { FeedResponseInterface } from '../../interfaces/feed-response.interface'
 
 @Injectable()
 export class FeedEffect {
@@ -17,7 +17,7 @@ export class FeedEffect {
       ofType(getFeedAction),
       switchMap(({ url }) => {
         return this.feedService.getFeed(url).pipe(
-          map((feed: GetFeedResponseInterface) => {
+          map((feed: FeedResponseInterface) => {
             return getFeedSuccessAction({ feed })
           }),
           catchError(() => {

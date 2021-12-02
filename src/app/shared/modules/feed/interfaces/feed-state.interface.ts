@@ -1,7 +1,7 @@
-import { GetFeedResponseInterface } from './get-feed-response.interface'
+import { FeedResponseInterface } from './feed-response.interface'
 
 export interface FeedStateInterface {
   isLoading: boolean
-  data: GetFeedResponseInterface | null
+  data: FeedResponseInterface | null
   error: string | null
 }

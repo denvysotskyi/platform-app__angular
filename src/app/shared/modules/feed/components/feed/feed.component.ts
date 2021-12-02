@@ -11,7 +11,7 @@ import { select, Store } from '@ngrx/store'
 import { Observable, Subscription } from 'rxjs'
 import { parseUrl, stringify } from 'query-string'
 
-import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
+import { FeedResponseInterface } from '../../interfaces/feed-response.interface'
 import { getFeedAction } from '../../store/actions/feed.actions'
 import {
   isLoadingSelector,
@@ -29,7 +29,7 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   @Input('apiUrl') apiUrlProps: string
 
   isLoading$: Observable<boolean>
-  feed$: Observable<GetFeedResponseInterface | null>
+  feed$: Observable<FeedResponseInterface | null>
   error$: Observable<string | null>
 
   limit: number = environment.limit
