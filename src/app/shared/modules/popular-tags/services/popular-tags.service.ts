@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { map, Observable } from 'rxjs'
 
+import { PopularTagsModule } from '../popular-tags.module'
 import { TagType } from '../../../types/tag.type'
 import { environment } from '../../../../../environments/environment'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: PopularTagsModule
 })
 export class PopularTagsService {
   constructor(private http: HttpClient) {}

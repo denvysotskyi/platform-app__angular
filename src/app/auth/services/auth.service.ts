@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { map, Observable } from 'rxjs'
 
+import { AuthModule } from '../auth.module'
 import { RegisterRequestInterface } from '../interfaces/register-request.interface'
 import { CurrentUserInterface } from '../../shared/interfaces/current-user.interface'
 import { AuthResponseInterface } from '../interfaces/auth-response.interface'
@@ -9,7 +10,7 @@ import { LoginRequestInterface } from '../interfaces/login-request.interface'
 import { environment } from '../../../environments/environment'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: AuthModule
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
