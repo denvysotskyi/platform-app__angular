@@ -26,6 +26,7 @@ import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth.reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed.reducer'
 import { popularTagsReducer } from './shared/modules/popular-tags/store/reducers/popular-tags.reducer'
+import { articleReducer } from './article/store/reducers/article.reducer'
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -51,7 +52,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       router: routerReducer,
       auth: authReducer,
       feed: feedReducer,
-      tags: popularTagsReducer
+      tags: popularTagsReducer,
+      article: articleReducer
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({

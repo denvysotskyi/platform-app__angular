@@ -38,5 +38,5 @@ export const feedReducer = createReducer(
       isLoading: false
     })
   ),
-  on(routerNavigationAction, (state): FeedStateInterface => initialState)
+  on(routerNavigationAction, (): FeedStateInterface => initialState)
 )
