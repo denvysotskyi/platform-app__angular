@@ -21,6 +21,7 @@ import { LoginEffect } from './auth/store/effects/login.effect'
 import { CurrentUserEffect } from './auth/store/effects/current-user.effect'
 import { FeedEffect } from './shared/modules/feed/store/effects/feed.effect'
 import { PopularTagsEffect } from './shared/modules/popular-tags/store/effects/popular-tags.effect'
+import { ArticleEffect } from './article/store/effects/article.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth.reducer'
@@ -65,7 +66,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       LoginEffect,
       CurrentUserEffect,
       FeedEffect,
-      PopularTagsEffect
+      PopularTagsEffect,
+      ArticleEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],
