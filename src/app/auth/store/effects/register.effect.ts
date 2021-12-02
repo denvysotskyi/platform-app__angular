@@ -8,7 +8,7 @@ import {
   registerAction,
   registerFailureAction,
   registerSuccessAction
-} from '../actions/register-actions'
+} from '../actions/register.actions'
 import { AuthService } from '../../services/auth.service'
 import { CurrentUserInterface } from '../../../shared/interfaces/current-user.interface'
 import { LocalStorageService } from '../../../shared/services/local-storage.service'

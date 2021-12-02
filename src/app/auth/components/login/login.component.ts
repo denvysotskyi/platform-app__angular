@@ -6,11 +6,11 @@ import { Observable } from 'rxjs'
 import {
   isSubmittingSelector,
   validationErrorsSelector
-} from '../../store/selectors/auth-selectors'
+} from '../../store/selectors/auth.selectors'
 import { BackendErrorsInterface } from '../../../shared/interfaces/backend-errors.interface'
 import { AppStateInterface } from '../../../shared/interfaces/app-state.interface'
 import { LoginRequestInterface } from '../../interfaces/login-request.interface'
-import { loginAction } from '../../store/actions/login-actions'
+import { loginAction } from '../../store/actions/login.actions'
 
 @Component({
   selector: 'app-login',

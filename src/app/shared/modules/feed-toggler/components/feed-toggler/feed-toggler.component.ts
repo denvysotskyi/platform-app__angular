@@ -3,7 +3,7 @@ import { Observable } from 'rxjs'
 import { select, Store } from '@ngrx/store'
 
 import { TagType } from '../../../../types/tag.type'
-import { isLoggedInSelector } from '../../../../../auth/store/selectors/auth-selectors'
+import { isLoggedInSelector } from '../../../../../auth/store/selectors/auth.selectors'
 
 @Component({
   selector: 'app-feed-toggler',

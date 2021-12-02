@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 
-import { getPopularTagsAction } from '../../store/actions/get-popular-tags-actions'
+import { getPopularTagsAction } from '../../store/actions/popular-tags.actions'
 import {
   errorSelector,
   isLoadingSelector,
   tagsSelector
-} from '../../store/selectors/tags-selectors'
+} from '../../store/selectors/popular-tags.selectors'
 import { TagType } from '../../../../types/tag.type'
 
 @Component({

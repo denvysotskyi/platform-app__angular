@@ -18,14 +18,14 @@ import { TagFeedModule } from './tag-feed/tag-feed.module'
 import { BannerModule } from './shared/modules/banner/banner.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
-import { GetCurrentUserEffect } from './auth/store/effects/get-current-user.effect'
-import { GetFeedEffect } from './shared/modules/feed/store/effects/get-feed.effect'
-import { GetPopularTagsEffect } from './shared/modules/popular-tags/store/effects/get-popular-tags.effect'
+import { CurrentUserEffect } from './auth/store/effects/current-user.effect'
+import { FeedEffect } from './shared/modules/feed/store/effects/feed.effect'
+import { PopularTagsEffect } from './shared/modules/popular-tags/store/effects/popular-tags.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
-import { authReducer } from './auth/store/reducers/auth-reducer'
-import { feedReducer } from './shared/modules/feed/store/reducers/feed-reducer'
-import { tagsReducer } from './shared/modules/popular-tags/store/reducers/tags-reducer'
+import { authReducer } from './auth/store/reducers/auth.reducer'
+import { feedReducer } from './shared/modules/feed/store/reducers/feed.reducer'
+import { popularTagsReducer } from './shared/modules/popular-tags/store/reducers/popular-tags.reducer'
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -51,7 +51,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
       router: routerReducer,
       auth: authReducer,
       feed: feedReducer,
-      tags: tagsReducer
+      tags: popularTagsReducer
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
@@ -61,9 +61,9 @@ const INTERCEPTOR_PROVIDER: Provider = {
     EffectsModule.forRoot([
       RegisterEffect,
       LoginEffect,
-      GetCurrentUserEffect,
-      GetFeedEffect,
-      GetPopularTagsEffect
+      CurrentUserEffect,
+      FeedEffect,
+      PopularTagsEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],

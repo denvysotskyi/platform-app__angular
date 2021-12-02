@@ -5,7 +5,7 @@ import {
   getFeedAction,
   getFeedFailureAction,
   getFeedSuccessAction
-} from '../actions/get-feed-actions'
+} from '../actions/feed.actions'
 import { FeedStateInterface } from '../../interfaces/feed-state.interface'
 
 export const initialState: FeedStateInterface = {

@@ -6,11 +6,11 @@ import { Observable } from 'rxjs'
 import {
   isSubmittingSelector,
   validationErrorsSelector
-} from '../../store/selectors/auth-selectors'
+} from '../../store/selectors/auth.selectors'
 import { AppStateInterface } from '../../../shared/interfaces/app-state.interface'
 import { BackendErrorsInterface } from '../../../shared/interfaces/backend-errors.interface'
 import { RegisterRequestInterface } from '../../interfaces/register-request.interface'
-import { registerAction } from '../../store/actions/register-actions'
+import { registerAction } from '../../store/actions/register.actions'
 
 @Component({
   selector: 'app-register',

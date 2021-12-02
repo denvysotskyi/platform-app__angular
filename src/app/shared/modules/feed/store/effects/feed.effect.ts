@@ -6,12 +6,12 @@ import {
   getFeedAction,
   getFeedFailureAction,
   getFeedSuccessAction
-} from '../actions/get-feed-actions'
+} from '../actions/feed.actions'
 import { FeedService } from '../../services/feed.service'
 import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
 
 @Injectable()
-export class GetFeedEffect {
+export class FeedEffect {
   getFeed$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getFeedAction),

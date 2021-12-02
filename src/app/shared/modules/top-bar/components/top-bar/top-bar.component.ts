@@ -7,8 +7,8 @@ import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector
-} from '../../../../../auth/store/selectors/auth-selectors'
-import { logoutAction } from '../../../../../auth/store/actions/logout-actions'
+} from '../../../../../auth/store/selectors/auth.selectors'
+import { logoutAction } from '../../../../../auth/store/actions/logout.actions'
 import { LocalStorageService } from '../../../../services/local-storage.service'
 
 @Component({

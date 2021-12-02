@@ -10,10 +10,10 @@ import {
   getCurrentUserAction,
   getCurrentUserFailureAction,
   getCurrentUserSuccessAction
-} from '../actions/get-current-user-actions'
+} from '../actions/current-user.actions'
 
 @Injectable()
-export class GetCurrentUserEffect {
+export class CurrentUserEffect {
   getCurrentUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getCurrentUserAction),

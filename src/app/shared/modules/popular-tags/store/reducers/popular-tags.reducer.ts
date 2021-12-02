@@ -5,7 +5,7 @@ import {
   getPopularTagsAction,
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction
-} from '../actions/get-popular-tags-actions'
+} from '../actions/popular-tags.actions'
 import { PopularTagsStateInterface } from '../../interfaces/popular-tags-state.interface'
 
 export const initialState: PopularTagsStateInterface = {
@@ -14,7 +14,7 @@ export const initialState: PopularTagsStateInterface = {
   error: null
 }
 
-export const tagsReducer = createReducer(
+export const popularTagsReducer = createReducer(
   initialState,
   on(
     getPopularTagsAction,

@@ -5,18 +5,18 @@ import {
   registerAction,
   registerFailureAction,
   registerSuccessAction
-} from '../actions/register-actions'
+} from '../actions/register.actions'
 import {
   loginAction,
   loginFailureAction,
   loginSuccessAction
-} from '../actions/login-actions'
+} from '../actions/login.actions'
 import {
   getCurrentUserAction,
   getCurrentUserFailureAction,
   getCurrentUserSuccessAction
-} from '../actions/get-current-user-actions'
-import { logoutAction } from '../actions/logout-actions'
+} from '../actions/current-user.actions'
+import { logoutAction } from '../actions/logout.actions'
 
 export const initialState: AuthStateInterface = {
   isSubmitting: false,

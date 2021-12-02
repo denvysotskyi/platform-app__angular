@@ -12,12 +12,12 @@ import { Observable, Subscription } from 'rxjs'
 import { parseUrl, stringify } from 'query-string'
 
 import { GetFeedResponseInterface } from '../../interfaces/get-feed-response.interface'
-import { getFeedAction } from '../../store/actions/get-feed-actions'
+import { getFeedAction } from '../../store/actions/feed.actions'
 import {
   isLoadingSelector,
   feedSelector,
   errorSelector
-} from '../../store/selectors/feed-selectors'
+} from '../../store/selectors/feed.selectors'
 import { environment } from '../../../../../../environments/environment'
 
 @Component({

@@ -6,12 +6,12 @@ import {
   getPopularTagsAction,
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction
-} from '../actions/get-popular-tags-actions'
+} from '../actions/popular-tags.actions'
 import { TagType } from '../../../../types/tag.type'
 import { PopularTagsService } from '../../services/popular-tags.service'
 
 @Injectable()
-export class GetPopularTagsEffect {
+export class PopularTagsEffect {
   getPopularTags$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getPopularTagsAction),
