@@ -11,7 +11,8 @@ import { ArticleStateInterface } from '../../interfaces/article-state.interface'
 export const initialState: ArticleStateInterface = {
   isLoading: false,
   data: null,
-  error: null
+  error: null,
+  isAuthor: false
 }
 
 export const articleReducer = createReducer(

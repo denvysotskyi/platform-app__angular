@@ -1,3 +1,44 @@
-<h2>
-  ARTICLE!!!
-</h2>
+<app-loading *ngIf='isLoading$ | async'></app-loading>
+
+<app-error-message *ngIf='error$ | async'></app-error-message>
+
+<div class='info-wrap'>
+
+  <div class='top'>
+
+    <div class='author'>
+
+      <div class='author-info'>
+        <a [routerLink]="['/profiles', article.author.username]">
+          <img class='avatar'
+               [src]='article.author.image'
+               alt='avatar'
+          />
+        </a>
+      </div>
+
+      <div class='info'>
+        <div class='name'>
+          <a [routerLink]="['/profiles', article.author.username]">
+            {{article.author.username}}
+          </a>
+        </div>
+        <span class='date'>
+          {{article.createdAt | date: 'longDate': undefined: 'ua'}}
+        </span>
+      </div>
+
+      <div class='btns'>
+        <button class='follow'>
+          + Подписаться Вася1990
+        </button>
+        <button class='favorite'>
+          Любимые статьи
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class='bottom'></div>
+</div>

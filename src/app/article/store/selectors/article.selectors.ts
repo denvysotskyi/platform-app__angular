@@ -24,3 +24,8 @@ export const errorSelector = createSelector(
   selectFeature,
   (articleState: ArticleStateInterface) => articleState.error
 )
+
+export const isAuthor = createSelector(
+  selectFeature,
+  (articleState: ArticleStateInterface) => articleState.isAuthor
+)
