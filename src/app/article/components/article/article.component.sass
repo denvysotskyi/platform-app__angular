@@ -8,12 +8,14 @@
   height: 200px
   border: solid var(--dark-gray-color)
   border-width: 1px 1px 0px 1px
+  .title
+    margin: 20px
   .author
     display: flex
     justify-content: space-between
     align-items: flex-end
     margin: 20px
-    width: 500px
+    width: 850px
     .author-info
       background: red
       display: flex
@@ -39,7 +41,14 @@
 
 .btns
   display: flex
+  .btns-if
+    display: flex
+    .edit
+      background: var(--dark-color)
+    .delete
+      background: var(--error-color)
   button
+    margin-left: 2px
     display: flex
     justify-content: center
     align-items: center
@@ -58,5 +67,9 @@
       opacity: .8
       cursor: not-allowed
 
-.favorite
-  margin-left: 2px
+
+
+
+
+
+

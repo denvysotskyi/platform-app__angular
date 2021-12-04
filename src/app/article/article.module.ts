@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { ArticleComponent } from './components/article/article.component'
 import { ErrorMessageModule } from '../shared/modules/error-message/error-message.module'
 import { LoadingModule } from '../shared/modules/loading/loading.module'
+import { TagListModule } from '../shared/modules/tag-list/tag-list.module'
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ErrorMessageModule,
-    LoadingModule
+    LoadingModule,
+    TagListModule
   ]
 })
 export class ArticleModule {}

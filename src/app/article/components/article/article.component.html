@@ -2,12 +2,17 @@
 
 <app-error-message *ngIf='error$ | async'></app-error-message>
 
-<div class='info-wrap'>
+<div class='info-wrap' *ngIf="article">
 
   <div class='top'>
 
-    <div class='author'>
+    <div class="title">
+      <h1>
+        {{article.title}}
+      </h1>
+    </div>
 
+    <div class='author'>
       <div class='author-info'>
         <a [routerLink]="['/profiles', article.author.username]">
           <img class='avatar'
@@ -16,7 +21,6 @@
           />
         </a>
       </div>
-
       <div class='info'>
         <div class='name'>
           <a [routerLink]="['/profiles', article.author.username]">
@@ -27,18 +31,38 @@
           {{article.createdAt | date: 'longDate': undefined: 'ua'}}
         </span>
       </div>
-
       <div class='btns'>
         <button class='follow'>
-          + Подписаться Вася1990
+          + Подписаться {{article.author.username}}
         </button>
         <button class='favorite'>
           Любимые статьи
         </button>
+<!--        <div class="btns-if" *ngIf="isAuthor$ | async">-->
+        <div class="btns-if">
+          <button class='edit'
+                  [routerLink]="['/articles', article.slug, 'edit']"
+          >
+            <i class="ion-edit"></i>
+            &nbsp;
+            Редактировать статью
+          </button>
+          <button class='delete'>
+            Удалить статью
+          </button>
+        </div>
       </div>
+
     </div>
 
   </div>
 
-  <div class='bottom'></div>
+  <div class='bottom'>
+    <p>
+      {{article.body}}
+    </p>
+    <app-tag-list [tags]="article.tagList">
+    </app-tag-list>
+  </div>
+
 </div>
