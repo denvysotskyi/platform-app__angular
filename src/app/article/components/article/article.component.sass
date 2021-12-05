@@ -5,48 +5,51 @@
   flex-direction: column
 
 .top
-  height: 200px
+  height: 160px
   border: solid var(--dark-gray-color)
   border-width: 1px 1px 0px 1px
-  .title
-    margin: 20px
-  .author
+  display: flex
+  flex-direction: column
+  align-items: center
+  .top-main
     display: flex
     justify-content: space-between
     align-items: flex-end
-    margin: 20px
-    width: 850px
-    .author-info
-      background: red
-      display: flex
-      align-items: center
-      justify-content: center
-    a
-      display: flex
-      align-items: center
-      justify-content: center
+    width: 95%
+    height: 80px
+    margin-top: 20px
+  .author
+    display: flex
+    align-items: flex-end
+    height: 80px
     .avatar
-      width: 50px
-      height: 50px
-      border-radius: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-right: 15px
+      img
+        width: 80px
+        height: 80px
+        border-radius: 100%
     .info
       display: flex
       flex-direction: column
+      align-items: flex-start
+      .name
+        a
+          color: var(--primary-color)
+          font-size: 40px
+      .date
+        font-size: 20px
+  .tags
+    margin-top: 20px
+    width: 95%
 
 
 
-.bottom
-  height: 407px
-  border: 1px solid var(--dark-gray-color)
 
-.btns
+.btns-top
   display: flex
-  .btns-if
-    display: flex
-    .edit
-      background: var(--dark-color)
-    .delete
-      background: var(--error-color)
   button
     margin-left: 2px
     display: flex
@@ -67,9 +70,51 @@
       opacity: .8
       cursor: not-allowed
 
+.bottom
+  display: flex
+  justify-content: center
+  height: 447px
+  border: 1px solid var(--dark-gray-color)
+  .bottom-main
+    display: flex
+    justify-content: space-between
+    width: 95%
+    .article
+      display: flex
+      flex-direction: column
+      margin-top: 20px
+      .title
+        font-size: 40px
+        margin-bottom: 20px
+      .body
+        font-size: 20px
 
-
-
+.btns-bottom
+  margin-top: 20px
+  display: flex
+  button
+    margin-left: 2px
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 40px
+    padding: 0 15px
+    font-size: 13px
+    font-weight: 400
+    border: none
+    border-radius: 5px
+    background: var(--primary-color)
+    color: var(--light-color)
+    &:hover
+      opacity: .8
+    &:disabled
+      background: var(--dark-gray-color)
+      opacity: .8
+      cursor: not-allowed
+  .edit
+    background: var(--dark-color)
+  .delete
+    background: var(--error-color)
 
 
 
