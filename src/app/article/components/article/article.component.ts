@@ -4,7 +4,10 @@ import { select, Store } from '@ngrx/store'
 import { combineLatest, Observable, Subscription } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { getArticleAction } from '../../store/actions/article.actions'
+import {
+  deleteArticleAction,
+  getArticleAction
+} from '../../store/actions/article.actions'
 import { ArticleInterface } from 'src/app/shared/interfaces/article.interface'
 import {
   articleSelector,
@@ -71,5 +74,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   fetchData(): void {
     this.store.dispatch(getArticleAction({ slug: this.slug }))
+  }
+
+  deleteArticle(): void {
+    this.store.dispatch(deleteArticleAction({ slug: this.slug }))
   }
 }

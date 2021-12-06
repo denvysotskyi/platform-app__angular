@@ -13,10 +13,10 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getArticle(slug: string): Observable<ArticleInterface> {
-    const fullUrl = `${environment.apiUrl}/articles/${slug}`
+    const url = `${environment.apiUrl}/articles/${slug}`
 
     return this.http
-      .get<ArticleResponseInterface>(fullUrl)
+      .get<ArticleResponseInterface>(url)
       .pipe(map((response: ArticleResponseInterface) => response.article))
   }
 }

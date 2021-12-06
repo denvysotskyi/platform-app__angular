@@ -26,9 +26,7 @@ export class CurrentUserEffect {
           map((currentUser: CurrentUserInterface) => {
             return getCurrentUserSuccessAction({ currentUser })
           }),
-          catchError(() => {
-            return of(getCurrentUserFailureAction())
-          })
+          catchError(() => of(getCurrentUserFailureAction()))
         )
       })
     )

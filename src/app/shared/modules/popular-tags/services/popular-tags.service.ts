@@ -15,10 +15,8 @@ export class PopularTagsService {
   getPopularTags(): Observable<TagType[] | null> {
     const fullUrl = environment.apiUrl + '/tags'
 
-    return this.http.get<TagType[] | null>(fullUrl).pipe(
-      map((res: any) => {
-        return res.tags
-      })
-    )
+    return this.http
+      .get<TagType[] | null>(fullUrl)
+      .pipe(map((res: any) => res.tags))
   }
 }
