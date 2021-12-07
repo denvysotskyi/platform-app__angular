@@ -16,6 +16,7 @@ import { GlobalFeedModule } from './global-feed/global-feed.module'
 import { YourFeedModule } from './your-feed/your-feed.module'
 import { TagFeedModule } from './tag-feed/tag-feed.module'
 import { BannerModule } from './shared/modules/banner/banner.module'
+import { CreateArticleModule } from './create-article/create-article.module'
 import { ArticleModule } from './article/article.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
@@ -50,6 +51,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     YourFeedModule,
     TagFeedModule,
     BannerModule,
+    CreateArticleModule,
     ArticleModule,
     StoreModule.forRoot({
       router: routerReducer,
