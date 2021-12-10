@@ -3,14 +3,14 @@ import { Component, Input } from '@angular/core'
 @Component({
   selector: 'app-error-message',
   template: `
-    <div class="error-message">
+    <div class="error-wrap">
       <p>
         {{ messageProps }}
       </p>
     </div>
   `,
   styles: [
-    `.error-message
+    `.error-wrap
        width: 211px
        border: 1px solid var(--error-color)
        border-radius: 10px

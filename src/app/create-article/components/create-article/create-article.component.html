@@ -2,4 +2,8 @@
   create-article works!
 </h1>
 
-<app-article-form></app-article-form>
+<app-article-form [initialValues]="initialValues"
+                  [isSubmitting]="false"
+                  (articleSubmit)="onSubmit($event)"
+>
+</app-article-form>

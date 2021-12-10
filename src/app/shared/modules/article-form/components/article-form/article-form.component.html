@@ -1,1 +1,40 @@
-<p>article-form works!</p>
+<div class="editor-wrap">
+  <app-backend-error-messages *ngIf="errorsProps"
+                              [backendErrors]="errorsProps"
+  >
+  </app-backend-error-messages>
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+  >
+    <div>
+      <input type='text'
+             placeholder='Введите название статьи'
+             formControlName='title'
+      />
+    </div>
+    <div>
+      <input type='text'
+             placeholder='Введите описание статьи'
+             formControlName='description'
+      />
+    </div>
+    <div>
+      <textarea rows="8"
+                placeholder='Введите текст статьи'
+                formControlName='body'
+      >
+      </textarea>
+    </div>
+    <div>
+      <input type='text'
+             placeholder='Введите теги'
+             formControlName='tagList'
+      />
+    </div>
+    <button type='submit'
+            [disabled]='form.invalid || isSubmittingProps'
+    >
+      Опубликовать статью
+    </button>
+  </form>
+</div>
