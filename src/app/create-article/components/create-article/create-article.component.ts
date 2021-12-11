@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core'
 })
 export class CreateArticleComponent implements OnInit {
   initialValues = {
-    title: 'default title',
-    description: 'default description',
     body: 'default body',
-    tagList: ['default taglist']
+    description: 'default description',
+    tagList: ['default taglist'],
+    title: 'default title'
   }
 
   constructor() {}
