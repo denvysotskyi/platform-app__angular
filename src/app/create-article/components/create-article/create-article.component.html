@@ -1,9 +1,12 @@
-<h1>
-  create-article works!
-</h1>
+<div class="create-wrap">
+  <h1>
+    Создание статьи
+  </h1>
 
-<app-article-form [initialValues]="initialValues"
-                  [isSubmitting]="false"
-                  (articleSubmit)="onSubmit($event)"
->
-</app-article-form>
+  <app-article-form [initialValues]="initialValues"
+                    [isSubmitting]="false"
+                    (articleSubmit)="onSubmit($event)"
+  >
+  </app-article-form>
+</div>
+

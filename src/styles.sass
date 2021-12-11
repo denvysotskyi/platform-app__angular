@@ -32,6 +32,18 @@ input
   &::-webkit-input-placeholder
     color: var(--dark-gray-color)
 
+textarea
+  width: 540px
+  resize: none
+  border: 1px solid var(--gray-color)
+  border-radius: 5px
+  margin-bottom: 15px
+  padding: 10px 0 0 24px
+  font-family: Arial
+  font-size: 20px
+  &::-webkit-input-placeholder
+    color: var(--dark-gray-color)
+
 a
   text-decoration: none
 
@@ -56,10 +68,11 @@ ul
   a
     color: var(--primary-color)
 
-  form
-    display: flex
-    flex-direction: column
-    align-items: flex-end
+
+form
+  display: flex
+  flex-direction: column
+  align-items: flex-end
   button
     display: flex
     justify-content: center
@@ -73,7 +86,7 @@ ul
     background: var(--primary-color)
     color: var(--light-color)
     &:hover
-      opacity: .8
+       opacity: .8
     &:disabled
       background: var(--dark-gray-color)
       opacity: .8
