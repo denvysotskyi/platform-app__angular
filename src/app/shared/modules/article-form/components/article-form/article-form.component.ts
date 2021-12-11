@@ -36,5 +36,6 @@ export class ArticleFormComponent implements OnInit {
 
   onSubmit(): void {
     this.articleSubmitEvent.emit(this.form.value)
+    this.form.reset()
   }
 }

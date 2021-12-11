@@ -8,7 +8,6 @@ import {
   validationErrorsSelector
 } from '../../store/selectors/auth.selectors'
 import { BackendErrorsInterface } from '../../../shared/interfaces/backend-errors.interface'
-import { AppStateInterface } from '../../../shared/interfaces/app-state.interface'
 import { LoginRequestInterface } from '../../interfaces/login-request.interface'
 import { loginAction } from '../../store/actions/login.actions'
 
@@ -21,10 +20,7 @@ export class LoginComponent implements OnInit {
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
 
-  constructor(
-    private fb: FormBuilder,
-    private store: Store<AppStateInterface>
-  ) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
     this.initializeForm()

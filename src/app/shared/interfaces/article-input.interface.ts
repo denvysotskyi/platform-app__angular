@@ -1,6 +1,6 @@
 export interface ArticleInputInterface {
-  body: string
-  description: string
-  tagList: string[]
   title: string
+  description: string
+  body: string
+  tagList: string[]
 }

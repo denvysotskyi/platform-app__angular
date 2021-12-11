@@ -80,7 +80,7 @@ export const authReducer = createReducer(
   ),
   on(
     logoutAction,
-    (state, action): AuthStateInterface => ({
+    (state): AuthStateInterface => ({
       ...state,
       isSubmitting: false,
       currentUser: null,

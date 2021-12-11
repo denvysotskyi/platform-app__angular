@@ -24,12 +24,14 @@ import { CurrentUserEffect } from './auth/store/effects/current-user.effect'
 import { FeedEffect } from './shared/modules/feed/store/effects/feed.effect'
 import { PopularTagsEffect } from './shared/modules/popular-tags/store/effects/popular-tags.effect'
 import { ArticleEffect } from './article/store/effects/article.effect'
+import { CreateArticleEffect } from './create-article/store/effects/create-article.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth.reducer'
 import { feedReducer } from './shared/modules/feed/store/reducers/feed.reducer'
 import { popularTagsReducer } from './shared/modules/popular-tags/store/reducers/popular-tags.reducer'
 import { articleReducer } from './article/store/reducers/article.reducer'
+import { createArticleReducer } from './create-article/store/reducers/create-article.reducer'
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -58,7 +60,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       auth: authReducer,
       feed: feedReducer,
       tags: popularTagsReducer,
-      article: articleReducer
+      article: articleReducer,
+      create: createArticleReducer
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
@@ -71,7 +74,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       CurrentUserEffect,
       FeedEffect,
       PopularTagsEffect,
-      ArticleEffect
+      ArticleEffect,
+      CreateArticleEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],
