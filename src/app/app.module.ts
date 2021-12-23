@@ -17,6 +17,7 @@ import { YourFeedModule } from './your-feed/your-feed.module'
 import { TagFeedModule } from './tag-feed/tag-feed.module'
 import { BannerModule } from './shared/modules/banner/banner.module'
 import { CreateArticleModule } from './create-article/create-article.module'
+import { EditArticleModule } from './edit-article/edit-article.module'
 import { ArticleModule } from './article/article.module'
 import { RegisterEffect } from './auth/store/effects/register.effect'
 import { LoginEffect } from './auth/store/effects/login.effect'
@@ -25,6 +26,7 @@ import { FeedEffect } from './shared/modules/feed/store/effects/feed.effect'
 import { PopularTagsEffect } from './shared/modules/popular-tags/store/effects/popular-tags.effect'
 import { ArticleEffect } from './article/store/effects/article.effect'
 import { CreateArticleEffect } from './create-article/store/effects/create-article.effect'
+import { EditArticleEffect } from './edit-article/store/effects/edit-article.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth.reducer'
@@ -54,6 +56,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     TagFeedModule,
     BannerModule,
     CreateArticleModule,
+    EditArticleModule,
     ArticleModule,
     StoreModule.forRoot({
       router: routerReducer,
@@ -75,7 +78,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
       FeedEffect,
       PopularTagsEffect,
       ArticleEffect,
-      CreateArticleEffect
+      CreateArticleEffect,
+      EditArticleEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],
