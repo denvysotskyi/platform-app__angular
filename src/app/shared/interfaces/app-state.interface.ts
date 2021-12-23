@@ -3,6 +3,7 @@ import { FeedStateInterface } from '../modules/feed/interfaces/feed-state.interf
 import { PopularTagsStateInterface } from '../modules/popular-tags/interfaces/popular-tags-state.interface'
 import { ArticleStateInterface } from '../../article/interfaces/article-state.interface'
 import { CreateArticleStateInterface } from '../../create-article/interfaces/create-article-state.interface'
+import { EditArticleStateInterface } from '../../edit-article/interfaces/edit-article-state.interface'
 
 export interface AppStateInterface {
   auth: AuthStateInterface
@@ -10,4 +11,5 @@ export interface AppStateInterface {
   tags: PopularTagsStateInterface
   article: ArticleStateInterface
   create: CreateArticleStateInterface
+  edit: EditArticleStateInterface
 }

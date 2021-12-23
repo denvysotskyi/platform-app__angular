@@ -7,7 +7,7 @@ import {
   updateArticleAction,
   updateArticleFailureAction,
   updateArticleSuccessAction
-} from '../actions/edit-article.actions'
+} from '../actions/update-article.actions'
 import { EditArticleService } from '../../services/edit-article.service'
 import { ArticleInterface } from '../../../shared/interfaces/article.interface'
 import { HttpErrorResponse } from '@angular/common/http'
