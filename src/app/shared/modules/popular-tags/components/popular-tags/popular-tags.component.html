@@ -9,7 +9,9 @@
     Популярные теги
   </p>
   <ul>
-    <li *ngFor='let tag of popularTags$ | async'>
+    <li class="tag"
+        *ngFor='let tag of popularTags$ | async'
+    >
       <a [routerLink]="['/tags', tag]">
         {{tag}}
       </a>
