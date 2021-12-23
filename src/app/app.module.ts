@@ -26,7 +26,7 @@ import { FeedEffect } from './shared/modules/feed/store/effects/feed.effect'
 import { PopularTagsEffect } from './shared/modules/popular-tags/store/effects/popular-tags.effect'
 import { ArticleEffect } from './article/store/effects/article.effect'
 import { CreateArticleEffect } from './create-article/store/effects/create-article.effect'
-import { EditArticleEffect } from './edit-article/store/effects/edit-article.effect'
+import { UpdateArticleEffect } from './edit-article/store/effects/update-article.effect'
 import { AuthInterceptor } from './shared/services/auth-interceptor.service'
 import { environment } from '../environments/environment'
 import { authReducer } from './auth/store/reducers/auth.reducer'
@@ -79,7 +79,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
       PopularTagsEffect,
       ArticleEffect,
       CreateArticleEffect,
-      EditArticleEffect
+      UpdateArticleEffect
     ])
   ],
   providers: [INTERCEPTOR_PROVIDER],
