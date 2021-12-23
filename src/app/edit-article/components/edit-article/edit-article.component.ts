@@ -10,7 +10,7 @@ import {
   validationErrorsSelector
 } from '../../store/selectors/edit-article.selectors'
 import { getArticleAction } from '../../store/actions/get-article.actions'
-import { createArticleAction } from '../../../create-article/store/actions/create-article.actions'
+import { updateArticleAction } from '../../store/actions/update-article.actions'
 import { ArticleInputInterface } from '../../../shared/interfaces/article-input.interface'
 import { BackendErrorsInterface } from '../../../shared/interfaces/backend-errors.interface'
 import { ArticleInterface } from '../../../shared/interfaces/article.interface'
@@ -58,6 +58,6 @@ export class EditArticleComponent implements OnInit {
   }
 
   onSubmit(articleInput: ArticleInputInterface): void {
-    this.store.dispatch(createArticleAction({ articleInput }))
+    this.store.dispatch(updateArticleAction({ slug: this.slug, articleInput }))
   }
 }
