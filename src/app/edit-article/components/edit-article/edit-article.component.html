@@ -1,1 +1,15 @@
-<p>edit-article works!</p>
+<app-loading *ngIf='isLoading$ | async'></app-loading>
+
+<div class="edit-wrap">
+  <h1>
+    Редактирование статьи
+  </h1>
+
+  <app-article-form *ngIf="initialValues$ | async"
+                    [initialValues]="initialValues$ | async"
+                    [isSubmitting]="isSubmitting$ | async"
+                    [errors]="backendErrors$ | async"
+                    (articleSubmit)="onSubmit($event)"
+  >
+  </app-article-form>
+</div>
