@@ -7,5 +7,32 @@
   padding: 15px
   p
     font-size: 16px
+    display: flex
+    flex-direction: column
+    align-items: center
   .tag
+    display: flex
+    flex-direction: column
+    align-items: center
     margin: 7px 0 3px 0
+
+@media screen and (max-width: 768px)
+  .tags-wrap
+    height: 180px
+    width: 74%
+    p
+      font-size: 14px
+    .tag
+      font-size: 14px
+
+@media screen and (max-width: 425px)
+  .tags-wrap
+    height: 140px
+    margin-left: 35px
+    width: 65%
+    p
+      font-size: 10px
+    .tag
+      font-size: 10px
+      margin-top: 3px
+
