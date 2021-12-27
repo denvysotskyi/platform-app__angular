@@ -49,6 +49,10 @@
   .top
     .top-main
       .author
+        .avatar
+          img
+            width: 60px
+            height: 60px
         .info
           .name
             a
@@ -60,21 +64,19 @@
       flex-direction: column
       button
         margin-bottom: 2px
-
 @media screen and (max-width: 425px)
-  //.top
-  //  .author
-  //    .info
-  //      .name
-  //        a
-  //          font-size: 30px
-  //      .date
-  //        p
-  //          font-size: 15px
-  //  .btns-top
-  //    flex-direction: column
-  //    button
-  //      margin-bottom: 2px
+  .top
+    .top-main
+      .author
+        width: 48%
+        margin-right: 22px
+        .info
+          .name
+            a
+              font-size: 20px
+          .date
+            p
+              font-size: 10px
 
 .btns-top
   display: flex
@@ -99,10 +101,17 @@
       opacity: .8
       cursor: not-allowed
 
+@media screen and (max-width: 425px)
+  .btns-top
+    button
+      width: 84%
+      height: 35px
+      font-size: 11px
+
 .bottom
   display: flex
   justify-content: center
-  height: 447px
+  min-height: 447px
   border: 1px solid var(--dark-gray-color)
   .bottom-main
     display: flex
@@ -117,9 +126,11 @@
         margin-bottom: 20px
       .body
         font-size: 20px
+        margin-bottom: 20px
 
 @media screen and (max-width: 768px)
   .bottom
+    min-height: 347px
     .bottom-main
       .article
         .title
@@ -133,6 +144,17 @@
         margin-left: 20px
         button
           margin-bottom: 2px
+@media screen and (max-width: 425px)
+  .bottom
+    min-height: 247px
+    .bottom-main
+      .article
+        .title
+          p
+            font-size: 20px
+        .body
+          font-size: 10px
+          width: 90%
 
 .btns-bottom
   margin-top: 20px
@@ -158,3 +180,11 @@
     padding-bottom: 15px
   .delete
     background: var(--error-color)
+
+@media screen and (max-width: 425px)
+  .btns-bottom
+    margin-right: 3px
+    button
+      width: 84%
+      height: 35px
+      font-size: 11px
