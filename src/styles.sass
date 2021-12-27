@@ -21,6 +21,29 @@
   min-height: 800px
   overflow-x: hidden
 
+form
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  button
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 50px
+    padding: 0 25px
+    font-size: 20px
+    font-weight: 400
+    border: none
+    border-radius: 5px
+    background: var(--primary-color)
+    color: var(--light-color)
+    &:hover
+      opacity: .8
+    &:disabled
+      background: var(--dark-gray-color)
+      opacity: .8
+      cursor: not-allowed
+
 input
   width: 540px
   height: 50px
@@ -31,6 +54,32 @@ input
   font-size: 20px
   &::-webkit-input-placeholder
     color: var(--dark-gray-color)
+
+@media screen and (max-width: 768px)
+  form
+    align-items: center
+    button
+      width: 325px
+      height: 40px
+      font-size: 18px
+    input
+      width: 325px
+      height: 40px
+      font-size: 16px
+      padding-left: 15px
+
+@media screen and (max-width: 425px)
+  form
+    align-items: center
+    button
+      width: 185px
+      height: 35px
+      font-size: 16px
+    input
+      width: 185px
+      height: 35px
+      font-size: 13px
+      padding-left: 12px
 
 textarea
   width: 540px
@@ -68,26 +117,24 @@ ul
   a
     color: var(--primary-color)
 
+@media screen and (max-width: 768px)
+  .auth-wrap
+    min-width: 400px
+    .title
+      margin: 0 auto
+      font-size: 30px
+    .text
+      font-size: 14px
 
-form
-  display: flex
-  flex-direction: column
-  align-items: flex-end
-  button
-    display: flex
-    justify-content: center
-    align-items: center
-    height: 50px
-    padding: 0 25px
-    font-size: 20px
-    font-weight: 400
-    border: none
-    border-radius: 5px
-    background: var(--primary-color)
-    color: var(--light-color)
-    &:hover
-       opacity: .8
-    &:disabled
-      background: var(--dark-gray-color)
-      opacity: .8
-      cursor: not-allowed
+@media screen and (max-width: 425px)
+  .auth-wrap
+    min-width: 300px
+    .title
+      margin: 0 auto
+      font-size: 23px
+    .text
+      font-size: 12px
+
+
+
+
