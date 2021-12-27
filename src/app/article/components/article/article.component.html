@@ -53,9 +53,9 @@
           </p>
         </div>
       </div>
-      <div class="btns-bottom">
-<!--           *ngIf="isAuthor$ | async"-->
-<!--      >-->
+      <div class="btns-bottom"
+           *ngIf="isAuthor$ | async"
+      >
         <button class='edit'
                 [routerLink]="['/articles', article.slug, 'edit']"
         >
