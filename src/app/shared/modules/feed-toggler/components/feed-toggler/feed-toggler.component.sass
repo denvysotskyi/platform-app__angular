@@ -18,15 +18,22 @@
       display: flex
       justify-content: center
 
-@media screen and (max-width: 425px)
+@media screen and (max-width: 768px)
   .toggle-list-login
     li
       width: 90px
       a
+        font-size: 14px
+      a.active
+        height: 32px
+
+@media screen and (max-width: 425px)
+  .toggle-list-login
+    li
+      a
         font-size: 12px
       a.active
         height: 30px
-
 
 .toggle-list-logout
   display: flex
