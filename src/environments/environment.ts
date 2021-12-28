@@ -6,7 +6,7 @@ import { EnviromentsInterface } from './enviroments.interface'
 
 export const environment: EnviromentsInterface = {
   production: false,
-  apiUrl: 'http://localhost:3000/api',
+  apiUrl: 'https://api.realworld.io/api',
   limit: 10
 }
 

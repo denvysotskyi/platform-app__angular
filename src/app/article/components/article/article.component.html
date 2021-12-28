@@ -3,7 +3,6 @@
 <app-error-message *ngIf='error$ | async'></app-error-message>
 
 <div class='info-wrap' *ngIf="article">
-
   <div class='top'>
     <div class="top-main">
       <div class='author'>
@@ -34,11 +33,7 @@
         </button>
       </div>
     </div>
-    <div class="tags">
-      <app-tag-list [tags]="article.tagList"></app-tag-list>
-    </div>
   </div>
-
   <div class='bottom'>
     <div class="bottom-main">
       <div class="article">
@@ -55,12 +50,10 @@
       </div>
       <div class="btns-bottom"
            *ngIf="isAuthor$ | async"
-      >
+        >
         <button class='edit'
                 [routerLink]="['/articles', article.slug, 'edit']"
         >
-          <i class="ion-edit"></i>
-          &nbsp;
           Редактировать статью
         </button>
         <button class='delete'
@@ -71,5 +64,4 @@
       </div>
     </div>
   </div>
-
 </div>
