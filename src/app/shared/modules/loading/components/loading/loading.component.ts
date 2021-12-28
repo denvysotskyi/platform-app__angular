@@ -9,14 +9,6 @@ import { Component } from '@angular/core'
       </div>
     </div>
   `,
-  styles: [
-    `.image-wrap
-        display: flex
-        justify-content: center
-        .image
-          width: 175px
-          height: 175px
-`
-  ]
+  styleUrls: ['./loading.component.sass']
 })
 export class LoadingComponent {}
